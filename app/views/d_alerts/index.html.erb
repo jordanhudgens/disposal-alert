@@ -1,0 +1,33 @@
+<h1>Listing d_alerts</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Due date</th>
+      <th>Alert category</th>
+      <th>Contact name</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @d_alerts.each do |d_alert| %>
+      <tr>
+        <td><%= d_alert.name %></td>
+        <td><%= d_alert.due_date %></td>
+        <td><%= d_alert.alert_category %></td>
+        <td><%= d_alert.contact_name %></td>
+        <td><%= link_to 'Show', d_alert %></td>
+        <td><%= link_to 'Edit', edit_d_alert_path(d_alert) %></td>
+        <td><%= link_to 'Destroy', d_alert, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New D alert', new_d_alert_path %>
