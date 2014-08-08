@@ -1,1 +1,1 @@
-# TODO Connect to Heroku
+# TODO Setup sendgrid
