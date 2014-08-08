@@ -1,1 +1,1 @@
-# TODO Add devise for user auth
+# TODO Connect to Heroku
