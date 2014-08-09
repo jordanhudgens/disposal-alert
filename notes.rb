@@ -1,1 +1,1 @@
-# TODO Setup sendgrid
+# TODO Create email send function
