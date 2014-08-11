@@ -11,13 +11,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140807010719) do
+ActiveRecord::Schema.define(version: 20140811174224) do
 
   create_table "d_alerts", force: true do |t|
     t.string   "name"
     t.date     "due_date"
     t.string   "alert_category"
     t.string   "contact_name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "recurring_alert_id"
+  end
+
+  create_table "recurring_alerts", force: true do |t|
+    t.integer  "alert_interval"
+    t.date     "start_date"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
