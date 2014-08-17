@@ -41,3 +41,6 @@ end
 
 # Authentication
 gem 'devise'
+
+# Management
+gem 'activeadmin', github: 'gregbell/active_admin'
