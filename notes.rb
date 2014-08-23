@@ -5,5 +5,7 @@
 # TODO Have method create alert in the future, make sure to check for duplicates
 # TODO Integrate bootstrap
 # TODO Integrate Rspec to test potential cases
-# TODO Integrate activeadmin stylsheets
 # TODO Create admin users
+
+# Helpful guides
+# Bootstrap 3: https://gist.github.com/jordanhudgens/b23d6d3a54400f309064
