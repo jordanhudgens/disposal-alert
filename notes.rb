@@ -3,8 +3,8 @@
 # TODO Views/controller for recurring alerts
 # TODO Integrate call to recurring alerts to d alerts
 # TODO Have method create alert in the future, make sure to check for duplicates
-# TODO Integrate Rspec to test potential cases
-# TODO Create admin users
+# TODO Integrate new relic
+
 
 # Helpful guides
 # Bootstrap 3: https://gist.github.com/jordanhudgens/b23d6d3a54400f309064
