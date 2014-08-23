@@ -6,6 +6,7 @@ gem 'rails', '4.0.2'
 # Postgres for Production
 group :production do
   gem 'pg'
+  gem 'rails_12factor'
 end
 
 # SQLite for dev
