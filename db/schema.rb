@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140825102213) do
+ActiveRecord::Schema.define(version: 20140827032818) do
 
   create_table "active_admin_comments", force: true do |t|
     t.string   "namespace"
@@ -48,8 +48,6 @@ ActiveRecord::Schema.define(version: 20140825102213) do
 
   create_table "d_alerts", force: true do |t|
     t.date     "due_date"
-    t.string   "alert_category"
-    t.string   "contact_name"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "recurring_alert_id"
@@ -61,6 +59,8 @@ ActiveRecord::Schema.define(version: 20140825102213) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "name"
+    t.string   "alert_category"
+    t.string   "contact_name"
   end
 
   create_table "users", force: true do |t|
