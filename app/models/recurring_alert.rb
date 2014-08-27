@@ -1,5 +1,5 @@
 class RecurringAlert < ActiveRecord::Base
-  has_many :d_alerts
+  has_many :d_alerts, dependent: :destroy
 
   after_create :create_d_alerts
 

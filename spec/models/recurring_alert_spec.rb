@@ -19,6 +19,11 @@ describe RecurringAlert do
       first_d_alert = @recurring_alert.d_alerts.first
       expect(first_d_alert.due_date).to eq(Date.new(2014, 12, 15))
     end
+
+    it "should delete the associated d_alerts when the recurring alert is deleted" do
+      @recurring_alert.destroy!
+      expect(@recurring_alert.d_alerts.count).to eq(0)
+    end
   end
 
 end
