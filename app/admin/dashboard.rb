@@ -12,7 +12,7 @@ ActiveAdmin.register_page "Dashboard" do
         panel "Recent Alerts" do
           ul do
             DAlert.last(5).map do |d|
-              li link_to(d.name, admin_d_alert_path(d))
+              li link_to(d.due_date, admin_d_alert_path(d))
             end
           end
         end

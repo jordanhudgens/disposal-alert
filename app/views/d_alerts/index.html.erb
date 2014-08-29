@@ -3,9 +3,7 @@
 <table>
   <thead>
     <tr>
-      <th>Name</th>
       <th>Due date</th>
-      <th>Alert category</th>
       <th>Contact name</th>
       <th></th>
       <th></th>
@@ -16,10 +14,7 @@
   <tbody>
     <% @d_alerts.each do |d_alert| %>
       <tr>
-        <td><%= d_alert.name %></td>
         <td><%= d_alert.due_date %></td>
-        <td><%= d_alert.alert_category %></td>
-        <td><%= d_alert.contact_name %></td>
         <td><%= link_to 'Show', d_alert %></td>
         <td><%= link_to 'Edit', edit_d_alert_path(d_alert) %></td>
         <td><%= link_to 'Destroy', d_alert, method: :delete, data: { confirm: 'Are you sure?' } %></td>

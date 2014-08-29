@@ -13,8 +13,7 @@ class RecurringAlert < ActiveRecord::Base
   end
 
   def update_d_alerts
-    12.times do |i|
-      self.d_alerts.update(due_date: start_date + i.months)
-    end
+    self.d_alerts.destroy_all
+    create_d_alerts
   end
 end
