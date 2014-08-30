@@ -4,7 +4,7 @@
 # TODO Integrate call to recurring alerts to d alerts
 # TODO Have method create alert in the future, make sure to check for duplicates
 # TODO Integrate new relic
-# TODO Clean up d_alert and recurring_alert tables, adding completed check to the d_alert table
+# TODO Clean up d_alert and recurring_alerts tables, adding completed check to the d_alert table
 # TODO Test for leaving historical d_alerts alone, and only deleting ones in the future
 
 
