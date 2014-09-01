@@ -1,0 +1,8 @@
+Welcome to example.com
+===============================================
+
+Below are the pending disposal alerts:
+
+<% @d_alerts.each do |d_alert| %>
+    <%= d_alert.recurring_alert.name %>
+<% end %>

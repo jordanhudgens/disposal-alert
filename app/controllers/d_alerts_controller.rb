@@ -37,9 +37,6 @@ class DAlertsController < ApplicationController
     end
   end
 
-  def send_d_alert
-    DAlertMailer.email(@d_alert).deliver
-  end
 
   # PATCH/PUT /d_alerts/1
   # PATCH/PUT /d_alerts/1.json
