@@ -1,24 +1,10 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Name:</strong>
-  <%= @d_alert.name %>
-</p>
-
-<p>
   <strong>Due date:</strong>
   <%= @d_alert.due_date %>
 </p>
 
-<p>
-  <strong>Alert category:</strong>
-  <%= @d_alert.alert_category %>
-</p>
-
-<p>
-  <strong>Contact name:</strong>
-  <%= @d_alert.contact_name %>
-</p>
 
 <%= link_to 'Edit', edit_d_alert_path(@d_alert) %> |
 <%= link_to 'Back', d_alerts_path %>

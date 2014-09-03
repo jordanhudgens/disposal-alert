@@ -1,10 +1,10 @@
 class DAlertsController < ApplicationController
-  before_action :set_d_alert, only: [:show, :edit, :update, :destroy]
+  before_action :set_d_alert, only: [:show, :edit, :update, :destroy, :completed]
 
   # GET /d_alerts
   # GET /d_alerts.json
   def index
-    @d_alerts = DAlert.all
+    @d_alerts = DAlert.where(task_completed: false)
   end
 
   # GET /d_alerts/1
@@ -62,6 +62,14 @@ class DAlertsController < ApplicationController
     end
   end
 
+  def completed
+    @d_alert.update_attribute(:task_completed, true)
+    respond_to do |format|
+      format.html { redirect_to d_alerts_url }
+      format.json { head :no_content }
+    end
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_d_alert
@@ -70,6 +78,6 @@ class DAlertsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def d_alert_params
-      params.require(:d_alert).permit(:name, :due_date, :alert_category, :contact_name)
+      params.require(:d_alert).permit(:due_date, :task_completed)
     end
 end

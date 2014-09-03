@@ -1,28 +1,31 @@
-<h1>Listing d_alerts</h1>
+<h1>Pending Alerts</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Due date</th>
-      <th>Contact name</th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
+<div class="media">
+  <div class="media-body">
+    <table class="table table-hover table-small">
+      <thead>
+        <tr>
+          <th>Due date</th>
+          <th>Alert</th>
+          <th></th>
+          <th></th>
+          <th></th>
+        </tr>
+      </thead>
 
-  <tbody>
-    <% @d_alerts.each do |d_alert| %>
-      <tr>
-        <td><%= d_alert.due_date %></td>
-        <td><%= link_to 'Show', d_alert %></td>
-        <td><%= link_to 'Edit', edit_d_alert_path(d_alert) %></td>
-        <td><%= link_to 'Destroy', d_alert, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+      <tbody>
+        <% @d_alerts.each do |d_alert| %>
+          <tr>
+            <td><%= d_alert.due_date %></td>
+            <td><%= d_alert.recurring_alert.name %></td>
+            <td><%= link_to 'Completed', completed_path(d_alert) %></td>
+            <td><%= link_to 'Edit', edit_d_alert_path(d_alert) %></td>
+            <td><%= link_to 'Destroy', d_alert, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>
 
 <br>
-
-<%= link_to 'New D alert', new_d_alert_path %>
