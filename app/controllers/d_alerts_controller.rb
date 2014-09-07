@@ -4,7 +4,7 @@ class DAlertsController < ApplicationController
   # GET /d_alerts
   # GET /d_alerts.json
   def index
-    @d_alerts = DAlert.where(task_completed: false)
+    @d_alerts = DAlert.where(task_completed: false).where(due_date: Date.today..15.days.from_now)
   end
 
   # GET /d_alerts/1
