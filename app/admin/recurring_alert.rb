@@ -1,18 +1,15 @@
 ActiveAdmin.register RecurringAlert do
 
+  permit_params :name, :alert_category, :contact_name, :alert_interval, :start_date
 
-  # See permitted parameters documentation:
-  # https://github.com/gregbell/active_admin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
-  #
-  # permit_params :list, :of, :attributes, :on, :model
-  #
-  # or
-  #
-  # permit_params do
-  #  permitted = [:permitted, :attributes]
-  #  permitted << :other if resource.something?
-  #  permitted
-  # end
+  INTERVALS = %w(Weekly Twice-Monthly Monthly Quarterly Annually)
 
+  form do |f|
+    f.input :name
+    f.input :alert_category
+    f.input :contact_name
+    f.input :alert_interval, :as => :select, :collection => INTERVALS
+    f.input :start_date, :as => :datepicker
+  end
 
 end
