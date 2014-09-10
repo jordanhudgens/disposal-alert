@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Disposalalert</title>
+  <title><%= yield(:title) %></title>
   <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
@@ -10,8 +10,21 @@
 
 <div class="container">
 
-  <div class="homeage-logo">
-    <%= link_to image_tag("logo.png"), root_path %>
+
+
+  <div class="container">
+    <div class="row clearfix">
+      <div class="col-md-4 column">
+        <div class="homeage-logo">
+          <%= link_to image_tag("logo.png"), root_path %>
+        </div>
+      </div>
+      <div class="col-md-5 column">
+      </div>
+      <div class="col-md-3 column">
+        <h2><%= yield(:title) %></h2>
+      </div>
+    </div>
   </div>
 
   <% if flash[:notice] %>
