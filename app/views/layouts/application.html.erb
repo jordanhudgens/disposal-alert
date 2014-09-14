@@ -22,7 +22,15 @@
       <div class="col-md-5 column">
       </div>
       <div class="col-md-3 column">
-        <h2><%= yield(:title) %></h2>
+        <h2>
+          <%= yield(:title) %>
+          <% if current_user %>
+              <%= link_to "Sign out", destroy_user_session_path, method: :delete %>
+          <% else %>
+              <%= link_to "Sign In", new_user_session_path %>
+          <% end %>
+        </h2>
+
       </div>
     </div>
   </div>
