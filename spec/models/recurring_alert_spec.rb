@@ -31,6 +31,12 @@ describe RecurringAlert do
       first_d_alert = @recurring_alert.d_alerts.first
       expect(first_d_alert.due_date).to eq(Date.new(2014, 12, 16))
     end
+
+    it "should create a new d_alert when completed" do
+      d_alert = @recurring_alert.d_alerts.first
+      d_alert.update!(task_completed: true)
+      expect(@recurring_alert.d_alerts.count).to eq(13)
+    end
   end
 
 end
