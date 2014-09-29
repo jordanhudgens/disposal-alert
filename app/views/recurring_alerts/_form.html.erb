@@ -26,6 +26,13 @@
     </div>
 
     <div class="control-group">
+      <%= f.label "How many alerts would you like created?", class: 'control-label' %>
+      <div class="controls">
+        <%= f.number_field :number_of_alerts %>
+      </div>
+    </div>
+
+    <div class="control-group">
       <%= f.label :alert_interval, class: 'control-label' %>
       <div class="controls">
         <%= f.select(:alert_interval, options_for_select([['Weekly', 1], ['Bi Monthly', 2], ['Monthly', 3], ['Quarterly', 4], ['Annually', 5]])) %>

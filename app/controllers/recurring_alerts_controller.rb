@@ -41,7 +41,7 @@ class RecurringAlertsController < ApplicationController
 
   # Never trust parameters from the scary internet, only allow the white list through.
   def recurring_alert_params
-    params.require(:recurring_alert).permit(:alert_interval, :start_date, :name, :alert_category, :contact_name)
+    params.require(:recurring_alert).permit(:alert_interval, :start_date, :name, :alert_category, :contact_name, :number_of_alerts)
   end
 
 end

@@ -3,16 +3,11 @@ require 'rails_helper'
 describe RecurringAlert do
   describe "recurring alert created on Dec 15, 2014" do
     before do
-      @recurring_alert = RecurringAlert.create!(start_date: Date.new(2014, 12, 15))
+      @recurring_alert = RecurringAlert.create!(start_date: Date.new(2014, 12, 15), alert_interval: 1, name: "Well Holdings, LLC", alert_category: "Landowner", contact_name: "Joe Smith", number_of_alerts: 25)
     end
 
     it "should create d_alerts when a recurring alert is created" do
-      expect(@recurring_alert.d_alerts.count).to eq(12)
-    end
-
-    it "should create a d_alert 12 months into the future" do
-      last_d_alert = @recurring_alert.d_alerts.last
-      expect(last_d_alert.due_date).to eq(Date.new(2015, 11, 15))
+      expect(@recurring_alert.d_alerts.count).to eq(25)
     end
 
     it "should create a d_alert for the start date" do
@@ -32,11 +27,6 @@ describe RecurringAlert do
       expect(first_d_alert.due_date).to eq(Date.new(2014, 12, 16))
     end
 
-    it "should create a new d_alert when completed" do
-      d_alert = @recurring_alert.d_alerts.first
-      d_alert.update!(task_completed: true)
-      expect(@recurring_alert.d_alerts.count).to eq(13)
-    end
   end
 
 end

@@ -8,8 +8,20 @@ class RecurringAlert < ActiveRecord::Base
   private
 
   def create_d_alerts
-    12.times do |i|
-      self.d_alerts.create(due_date: start_date + i.months)
+
+    self.number_of_alerts.times do |i|
+      if self.alert_interval == 1
+        self.d_alerts.create(due_date: start_date + i.week)
+      elsif self.alert_interval == 2
+        self.d_alerts.create(due_date: start_date + i.weeks)
+      elsif self.alert_interval == 3
+        self.d_alerts.create(due_date: start_date + i.month)
+      elsif self.alert_interval == 4
+        self.d_alerts.create(due_date: start_date + i.months)
+      else
+        self.d_alerts.create(due_date: start_date + i.year)
+      end
+
     end
   end
 
