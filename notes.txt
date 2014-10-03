@@ -1,5 +1,4 @@
 TODO Have method create alert in the future, make sure to check for duplicates
-TODO Integrate new relic
 TODO Test for leaving historical d_alerts alone, and only deleting ones in the future
 
 
