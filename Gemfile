@@ -56,3 +56,5 @@ group :development, :test do
 end
 
 gem 'honeybadger'
+
+gem 'newrelic_rpm'
