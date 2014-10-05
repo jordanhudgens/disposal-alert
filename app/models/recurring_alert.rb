@@ -5,6 +5,8 @@ class RecurringAlert < ActiveRecord::Base
   after_create :create_d_alerts
   after_update :update_d_alerts
 
+  default_scope { order("created_at DESC") }
+
   private
 
   def create_d_alerts

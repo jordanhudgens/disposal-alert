@@ -18,7 +18,7 @@ class RecurringAlertsController < ApplicationController
 
     respond_to do |format|
       if @recurring_alert.save
-        format.html { redirect_to @recurring_alert, notice: 'Recurring alert was successfully created.' }
+        format.html { redirect_to recurring_alerts_path, notice: 'Recurring alert was successfully created.' }
         format.json { render action: 'show', status: :created, location: @recurring_alert }
       else
         format.html { render action: 'new' }
